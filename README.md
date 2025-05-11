@@ -1,6 +1,6 @@
 # Adi's First Flow
 
-Welcome to Adi's first flow, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to my first flow, powered by [crewAI](https://crewai.com). I used Google's LLM [Gemini](https://gemini.google.com/) and the Google search API [Serper](https://serper.dev/).
 
 ## Installation
 
@@ -19,14 +19,9 @@ Next, navigate to your project directory and install the dependencies:
 crewai install
 ```
 
-### Customizing
+### API Keys
 
-**Add your `GEMINI_API_KEY` into the `.env` file**
-
-- Modify `src/guide_creator_flow/config/agents.yaml` to define your agents
-- Modify `src/guide_creator_flow/config/tasks.yaml` to define your tasks
-- Modify `src/guide_creator_flow/crew.py` to add your own logic, tools and specific args
-- Modify `src/guide_creator_flow/main.py` to add custom inputs for your agents and tasks
+**Add your `GEMINI_API_KEY` and `SERPER_DEV_KEY` into the `.env` file**
 
 ## Running the Project
 
@@ -40,13 +35,38 @@ This command initializes the guide_creator_flow Flow as defined in your configur
 
 This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
 
-## Understanding Your Crew
+## Usage
 
-Adi's first flow is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+Once you start the program, it will ask: 
+
+`What topic would you like to create a guide for?`
+
+You can then input a topic of your choosing.
+
+`psychology`
+
+The program will ask:
+
+`Who is your target audience? (beginner/intermediate/advanced)`
+
+Input your audience's familiarity with the topic.
+
+`beginner`
+
+The flow will then start. Once finished, it will output a verbose complete guide and a simplified guide outline in an output folder.
+```
+output/
+├──commplete_guide.md
+└──guide_outline.json
+```
+
+## Understanding the Crew
+
+Adi's first flow is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in the crew.
 
 ## Support
 
-For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI.
+For support, questions, or feedback regarding crewAI.
 
 - Visit our [documentation](https://docs.crewai.com)
 - Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
